@@ -4,6 +4,3 @@ data class PersonNM(
     val picture: String,
     val name: String
 )
-
-
-

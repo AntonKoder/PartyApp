@@ -1,14 +1,13 @@
 package com.a4nt0n64r.partyapp.di.components
 
 import com.a4nt0n64r.partyapp.di.modules.MockInterceptor
-import com.a4nt0n64r.partyapp.ui.PartyViewModel
 import com.a4nt0n64r.partyapp.di.modules.NetworkModule
 import com.a4nt0n64r.partyapp.repository.network.ApiService
 import com.a4nt0n64r.partyapp.repository.network.NetworkRepository
+import com.a4nt0n64r.partyapp.ui.PartyViewModel
 import com.google.gson.Gson
 import dagger.Component
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import javax.inject.Singleton
 

@@ -12,7 +12,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class NetworkRepoImpl@Inject constructor(private val apiService: ApiService) : NetworkRepository {
+class NetworkRepoImpl @Inject constructor(private val apiService: ApiService) : NetworkRepository {
 
     override fun getParty(callBack: Callback) {
         val call = apiService.getParty()
@@ -27,8 +27,8 @@ class NetworkRepoImpl@Inject constructor(private val apiService: ApiService) : N
 
             override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
                 callBack.onError("NETWORK ERROR!")
-                Log.d("TAG_call", "${call}")
-                Log.d("TAG_t", "${t}")
+                Log.d("TAG_call", "$call")
+                Log.d("TAG_t", "$t")
             }
         })
     }

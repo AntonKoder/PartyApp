@@ -21,7 +21,8 @@ class PartyFragment : Fragment() {
     private lateinit var observerOnParty: Observer<PartyUI>
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         nullableBinding = FragmentPartyBinding.inflate(layoutInflater, container, false)
@@ -63,6 +64,4 @@ class PartyFragment : Fragment() {
         super.onDestroy()
         viewModel.party.removeObserver(observerOnParty)
     }
-
-
 }

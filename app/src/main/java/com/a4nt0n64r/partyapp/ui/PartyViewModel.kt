@@ -11,7 +11,6 @@ import com.a4nt0n64r.partyapp.models.ui.PartyUI
 import com.a4nt0n64r.partyapp.repository.network.Callback
 import com.a4nt0n64r.partyapp.repository.network.NetworkRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -32,7 +31,7 @@ class PartyViewModel : ViewModel() {
     private val _party = MutableLiveData<PartyUI>()
     val party: LiveData<PartyUI> get() = _party
 
-    fun getParty(){
+    fun getParty() {
         viewModelScope.launch(Dispatchers.IO) {
             networkRepository.getParty(object : Callback {
                 override fun onError(message: String) {

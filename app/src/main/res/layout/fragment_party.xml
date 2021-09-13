@@ -9,7 +9,8 @@
         android:id="@+id/party_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
+        android:maxHeight="250dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,16 +18,16 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/profile_image_size"
+        android:layout_height="@dimen/profile_image_size"
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
-        android:elevation="12dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="@dimen/app_margin"
         android:innerRadius="0dp"
         android:shape="ring"
         android:thicknessRatio="1.9"
         app:cardCornerRadius="40dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/party_image">
 
         <ImageView
@@ -42,30 +43,30 @@
         android:id="@+id/party_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        app:layout_constraintTop_toTopOf="@id/cardView"
+        android:layout_marginStart="@dimen/app_margin"
+        android:textSize="@dimen/large_text"
         app:layout_constraintStart_toEndOf="@id/cardView"
-        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="@id/cardView"
         tools:text="Вечеринка" />
 
     <TextView
         android:id="@+id/party_invite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        app:layout_constraintTop_toBottomOf="@id/party_name"
+        android:layout_marginStart="@dimen/app_margin"
+        android:text="Пригласил(а):"
+        android:textSize="@dimen/large_text"
         app:layout_constraintStart_toEndOf="@id/cardView"
-        android:textSize="24sp"
-        android:text="Пригласил(а):" />
+        app:layout_constraintTop_toBottomOf="@id/party_name" />
 
     <TextView
         android:id="@+id/party_starter_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        app:layout_constraintTop_toBottomOf="@id/party_name"
-        app:layout_constraintStart_toEndOf="@id/party_invite"
+        android:layout_marginStart="@dimen/app_margin"
         android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/party_invite"
+        app:layout_constraintTop_toBottomOf="@id/party_name"
         tools:text="Andrey" />
 
     <androidx.recyclerview.widget.RecyclerView
